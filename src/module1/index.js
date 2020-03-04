@@ -79,9 +79,7 @@ function initBuffers(gl) {
     // Now pass the list of positions into WebGL to build the
     // shape. We do this by creating a Float32Array from the
     // JavaScript array, then use it to fill the current buffer.
-    gl.bufferData(gl.ARRAY_BUFFER,
-        new Float32Array(positions),
-        gl.STATIC_DRAW);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
 
     return {
         position: positionBuffer
@@ -133,21 +131,15 @@ function drawScene(gl, programInfo, buffers) {
     // Tell WebGL how to pull out the positions from the position
     // buffer into the vertexPosition attribute.
     {
-        const numComponents = 2;
-        const type = gl.FLOAT;
-        const normalize = false;
-        const stride = 0;
-        const offset = 0;
         gl.bindBuffer(gl.ARRAY_BUFFER, buffers.position);
         gl.vertexAttribPointer(
             programInfo.attribLocations.vertexPosition,
-            numComponents,
-            type,
-            normalize,
-            stride,
-            offset);
-        gl.enableVertexAttribArray(
-            programInfo.attribLocations.vertexPosition);
+            2,                      // pull out 2 values per iteration
+            gl.FLOAT,
+            false,                  // the data in the buffer is 32bit floats
+            0,                      // how many bytes to get from one set of values to the next
+            0);                     // how many bytes inside the buffer to start from
+        gl.enableVertexAttribArray(programInfo.attribLocations.vertexPosition);
     }
 
     // Tell WebGL to use our program when drawing
