@@ -1,3 +1,3 @@
-export demo01 from './demo01';
-export demo02 from './demo02';
-export demo03 from './demo03';
+export hello from './01_hello';
+export matrix from './02_matrix';
+export color from './03_color';
