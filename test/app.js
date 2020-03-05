@@ -1,3 +1,3 @@
-import { module1 } from '../src/index';
+import { demo01, demo02, demo03, demo04 } from '../src/index';
 
-module1('#webgl');
+demo02('#webgl');

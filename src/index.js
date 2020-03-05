@@ -1,2 +1,3 @@
-export module1 from './module1/index2';
-export module2 from './module2';
+export demo01 from './demo01';
+export demo02 from './demo02';
+export demo03 from './demo03';
