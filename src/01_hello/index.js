@@ -28,8 +28,8 @@ var fragmentShaderSource = `
 function createWebGL(id) {
     const canvas = document.querySelector(id);
     var gl = canvas.getContext('webgl', {
-        antialias: false,
-        depth: false
+        antialias: false,       // 抗锯齿功能
+        depth: false            // 
     });
 
     // Only continue if WebGL is available and working
