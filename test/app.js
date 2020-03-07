@@ -1,3 +1,3 @@
-import { demo, hello, matrix, color } from '../src/index';
+import { demo, hello, color, texture, matrix } from '../src/index';
 
-demo('#webgl');
+texture('#webgl');
